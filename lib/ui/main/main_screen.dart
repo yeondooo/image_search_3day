@@ -22,6 +22,8 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     final viewModel = context.watch<MainViewModel>();
+    final state = viewModel.state;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('이미지 검색 앱'),
@@ -51,9 +53,9 @@ class _MainScreenState extends State<MainScreen> {
                   crossAxisSpacing: 4,
                   mainAxisSpacing: 4,
                 ),
-                itemCount: viewModel.photos.length,
+                itemCount: state.photos.length,
                 itemBuilder: (context, index) {
-                  final photo = viewModel.photos[index];
+                  final photo = state.photos[index];
                   return GestureDetector(
                     onTap: () {
                       context.push(
