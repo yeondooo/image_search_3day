@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:image_search_3day/data/model/photo.dart';
 
 class DetailScreen extends StatelessWidget {
-  const DetailScreen({Key? key}) : super(key: key);
+  final Photo photo;
+
+  const DetailScreen({Key? key, required this.photo}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -9,7 +12,10 @@ class DetailScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('디테일 페이지'),
       ),
-      body: Container(),
+      body: Hero(
+        tag: photo.id,
+        child: Image.network(photo.webformatURL),
+      ),
     );
   }
 }
