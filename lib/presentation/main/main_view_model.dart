@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:image_search_3day/data/repository/photo_repository.dart';
-import 'package:image_search_3day/ui/main/main_state.dart';
+import 'package:image_search_3day/domain/repository/photo_repository.dart';
+import 'package:image_search_3day/presentation/main/main_state.dart';
 
 class MainViewModel with ChangeNotifier {
   final PhotoRepository _repository;
